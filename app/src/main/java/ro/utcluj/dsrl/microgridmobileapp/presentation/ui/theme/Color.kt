@@ -1,4 +1,4 @@
-package ro.utcluj.dsrl.microgridmobileapp.ui.theme
+package ro.utcluj.dsrl.microgridmobileapp.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

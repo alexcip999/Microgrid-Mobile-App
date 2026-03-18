@@ -7,10 +7,14 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import ro.utcluj.dsrl.microgridmobileapp.ui.theme.AppTheme
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import ro.utcluj.dsrl.microgridmobileapp.presentation.feat.home.HomwScreen
+import ro.utcluj.dsrl.microgridmobileapp.presentation.navigation.HomeRoute
+import ro.utcluj.dsrl.microgridmobileapp.presentation.ui.components.BottomNavigationBar
+import ro.utcluj.dsrl.microgridmobileapp.presentation.ui.theme.AppTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,24 +22,23 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             AppTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
+                val navController = rememberNavController()
+
+                Scaffold(
+                    modifier = Modifier.fillMaxSize(),
+                    bottomBar = {
+                        BottomNavigationBar(navController)
+                    },
+                ) { innerPadding ->
+                    NavHost(
+                        navController = navController,
+                        startDestination = HomeRoute,
                         modifier = Modifier.padding(innerPadding),
-                    )
+                    ) {
+                        composable<HomeRoute> { HomwScreen() }
+                    }
                 }
             }
         }
     }
-}
-
-@Composable
-fun Greeting(
-    name: String,
-    modifier: Modifier = Modifier,
-) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier,
-    )
 }
