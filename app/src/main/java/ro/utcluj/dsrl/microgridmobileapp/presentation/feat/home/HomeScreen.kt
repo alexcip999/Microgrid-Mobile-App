@@ -44,37 +44,6 @@ fun HomwScreen() {
                 .fillMaxSize()
                 .padding(Dimensions.PaddingMedium),
     ) {
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            Box(
-                modifier =
-                    Modifier
-                        .size(Dimensions.IconLarge)
-                        .background(MaterialTheme.colorScheme.primary.copy(0.2f), CircleShape),
-                contentAlignment = Alignment.Center,
-            ) {
-                Icon(
-                    Icons.Default.Bolt,
-                    contentDescription = null,
-                    tint = MaterialTheme.colorScheme.primary,
-                )
-            }
-            Spacer(Modifier.width(Dimensions.PaddingLarge / 2))
-            Column {
-                Text(
-                    "MicroGrid Monitor",
-                    color = MaterialTheme.colorScheme.onBackground,
-                    style = MaterialTheme.typography.headlineMedium,
-                )
-                Text(
-                    "Local Network • 5 nodes",
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    style = MaterialTheme.typography.bodyMedium,
-                )
-            }
-        }
-
-        Spacer(Modifier.height(Dimensions.PaddingLarge))
-
         Row(
             Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween,

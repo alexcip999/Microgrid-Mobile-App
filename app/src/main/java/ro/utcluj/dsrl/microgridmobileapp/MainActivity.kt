@@ -18,6 +18,7 @@ import ro.utcluj.dsrl.microgridmobileapp.presentation.navigation.HomeRoute
 import ro.utcluj.dsrl.microgridmobileapp.presentation.navigation.MicrogridRoute
 import ro.utcluj.dsrl.microgridmobileapp.presentation.navigation.NeighborsRoute
 import ro.utcluj.dsrl.microgridmobileapp.presentation.ui.components.BottomNavigationBar
+import ro.utcluj.dsrl.microgridmobileapp.presentation.ui.components.MicrogridTopBar
 import ro.utcluj.dsrl.microgridmobileapp.presentation.ui.theme.AppTheme
 
 class MainActivity : ComponentActivity() {
@@ -32,6 +33,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     bottomBar = {
                         BottomNavigationBar(navController)
+                    },
+                    topBar = {
+                        MicrogridTopBar()
                     },
                 ) { innerPadding ->
                     NavHost(
