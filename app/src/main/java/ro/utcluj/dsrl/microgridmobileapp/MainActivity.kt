@@ -12,8 +12,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import ro.utcluj.dsrl.microgridmobileapp.presentation.feat.home.HomwScreen
+import ro.utcluj.dsrl.microgridmobileapp.presentation.feat.microgrid.MicrogridScreen
 import ro.utcluj.dsrl.microgridmobileapp.presentation.feat.neighbor.NeighborsScreen
 import ro.utcluj.dsrl.microgridmobileapp.presentation.navigation.HomeRoute
+import ro.utcluj.dsrl.microgridmobileapp.presentation.navigation.MicrogridRoute
 import ro.utcluj.dsrl.microgridmobileapp.presentation.navigation.NeighborsRoute
 import ro.utcluj.dsrl.microgridmobileapp.presentation.ui.components.BottomNavigationBar
 import ro.utcluj.dsrl.microgridmobileapp.presentation.ui.theme.AppTheme
@@ -39,6 +41,7 @@ class MainActivity : ComponentActivity() {
                     ) {
                         composable<HomeRoute> { HomwScreen() }
                         composable<NeighborsRoute> { NeighborsScreen() }
+                        composable<MicrogridRoute> { MicrogridScreen() }
                     }
                 }
             }
