@@ -411,36 +411,6 @@ fun BackgroundGlow() {
 
 @Composable
 fun HeaderSection() {
-    Row(verticalAlignment = Alignment.CenterVertically) {
-        Box(
-            modifier =
-                Modifier
-                    .size(Dimensions.IconLarge)
-                    .background(MaterialTheme.colorScheme.primaryContainer, CircleShape),
-            contentAlignment = Alignment.Center,
-        ) {
-            Icon(
-                Icons.Default.ElectricBolt,
-                contentDescription = null,
-                tint = MaterialTheme.colorScheme.primary,
-                modifier = Modifier.size(Dimensions.IconMedium),
-            )
-        }
-        Spacer(modifier = Modifier.width(Dimensions.PaddingMedium))
-        Column {
-            Text(
-                text = "MicroGrid Monitor",
-                style = MaterialTheme.typography.headlineMedium,
-                color = MaterialTheme.colorScheme.onSurface,
-            )
-            Text(
-                text = "Local Network • 5 Nodes",
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
-        }
-    }
-    Spacer(modifier = Modifier.height(Dimensions.PaddingLarge))
     Row(
         modifier = Modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceBetween,
